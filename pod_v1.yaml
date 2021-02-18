@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-pod
+  namespace: default
+  labels:
+    app: flask
+spec:
+  nodeName: worker01                                                                                
+  containers:
+  - name: flask
+    image: localhost:5001/flask:latest
+    ports:
+    - containerPort: 5000
