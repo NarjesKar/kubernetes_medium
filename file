@@ -1,0 +1,9 @@
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python3-pip
+RUN pip3 install requests
+COPY wait.py .
+COPY test_api_pod.py .
+RUN chmod 777 wait.py
+RUN chmod 777 test_api_pod.py
+CMD python3 wait.py
